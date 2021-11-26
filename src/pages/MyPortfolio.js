@@ -2,9 +2,9 @@ import React from 'react'
 
 const MyPortfolio = () => {
     return (
-        <div>
+        <article>
             <h1>Moje porfólio</h1>
-        </div>
+        </article>
     )
 }
 

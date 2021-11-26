@@ -2,9 +2,9 @@ import React from 'react'
 
 const AboutMy = () => {
     return (
-        <div>
-            <h1>o mne</h1>
-        </div>
+        <article>
+            <h1>O mne</h1>
+        </article>
     )
 }
 
