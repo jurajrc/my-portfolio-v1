@@ -15,7 +15,7 @@ function App() {
       <GlogalStyle />
       <Header />
       
-      <Switch location={location} key={location.pathname} >
+      <Switch>
         <Route path="/" exact >
           <AboutMy />
         </Route>
