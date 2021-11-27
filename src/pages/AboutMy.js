@@ -1,11 +1,14 @@
 import React from 'react'
+import Intro from '../components/Intro'
 
 const AboutMy = () => {
     return (
         <article>
-            <h1>O mne</h1>
+            <Intro />
         </article>
     )
 }
+
+
 
 export default AboutMy

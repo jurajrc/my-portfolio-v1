@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
     return (
         <article>
-            <h2>Kontakt</h2>
+            <h2 style={{marginTop: "5em"}}>Kontakt</h2>
         </article>
     )
 }

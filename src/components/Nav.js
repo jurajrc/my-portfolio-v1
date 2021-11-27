@@ -46,7 +46,7 @@ const StyleNav = styled(motion.nav)`
     ul {
         display: flex;
         li {
-            padding: 0 1em;
+            padding-left: 4em;
             a {
                 color: #8e8d8f;
                 transition: .3s all ease-in;

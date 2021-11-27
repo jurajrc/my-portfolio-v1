@@ -35,7 +35,18 @@ const GlogalStyle = createGlobalStyle`
         list-style: none;
     }
     article {
-        margin-top: 6em;
+        
+        min-height: 80vh;
+    }
+    .button {
+        padding: 0.5em 0.826em;
+        background: rgb(51, 51, 51);
+        color: #f8f8f8;
+        text-align: center;
+        border: 2px solid rgb(0, 128, 255);
+        border-radius: 3.125em;
+        width: 9.375em;
+        //box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.6);
     }
 `
 export default GlogalStyle
