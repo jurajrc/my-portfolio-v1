@@ -1,0 +1,74 @@
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
+// style
+import styled from 'styled-components'
+
+const Footer = () => {
+    return (
+        <StyleFooter>
+            <div className="footer-left">
+                <ul>
+                    <li> 
+                        <a href="https://github.com/jurajrc" target="_blank" rel="noreferrer" >
+                            <FontAwesomeIcon icon={faGithub} />Github
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="https://github.com/jurajrc" target="_blank" rel="noreferrer" >
+                            <FontAwesomeIcon icon={faLinkedin} />Linkedin
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="https://github.com/jurajrc" target="_blank" rel="noreferrer" >
+                            <FontAwesomeIcon icon={faInstagram} />Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div className="footer-right">
+                <p>
+                    © 2021 All rights reserved. Juraj Kubičár
+                </p>
+            </div>
+            
+        </StyleFooter>
+    )
+}
+
+const StyleFooter = styled.footer`
+    max-width: 100%;
+    height: 4em;
+    //padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #3e3e3e;
+    color: #8e8d8f;
+
+    .footer-left {
+        a { 
+            color: #8e8d8f;
+            transition: .3s all ease;
+        }
+        ul {
+            display: flex;
+
+            li {
+                margin: 0 1em;
+                svg {
+                    margin-right: .5em;
+                    transition: .3s all ease;
+                }
+                &:hover svg {
+                    color: #0080ff;
+                }
+                &:hover a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+`
+
+export default Footer

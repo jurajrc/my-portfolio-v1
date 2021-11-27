@@ -6,6 +6,7 @@ import AboutMy from './pages/AboutMy';
 import MyPortfolio from './pages/MyPortfolio';
 import Contact from './pages/Contact';
 import GlogalStyle from './components/GlobalStyle';
+import Footer from './components/Footer';
 
 function App() {
   const location = useLocation()
@@ -26,6 +27,8 @@ function App() {
           <Contact />
         </Route>
       </Switch>
+
+      <Footer />
 
     </div>
   );
