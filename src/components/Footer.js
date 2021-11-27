@@ -1,8 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faInstagram, faAirbnb } from '@fortawesome/free-brands-svg-icons'
 // style
 import styled from 'styled-components'
+import { faPlane } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
@@ -20,8 +21,13 @@ const Footer = () => {
                         </a>
                     </li>
                     <li> 
-                        <a href="https://github.com/jurajrc" target="_blank" rel="noreferrer" >
+                        <a href="https://www.instagram.com/jurajkubicar/" target="_blank" rel="noreferrer" >
                             <FontAwesomeIcon icon={faInstagram} />Instagram
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="https://jurajrc.sk" target="_blank" rel="noreferrer" title="Prerába sa na modernú React-app">
+                            <FontAwesomeIcon icon={faPlane} />JurajRC
                         </a>
                     </li>
                 </ul>
@@ -39,12 +45,13 @@ const Footer = () => {
 const StyleFooter = styled.footer`
     max-width: 100%;
     height: 4em;
-    //padding: 0 4%;
+    //margin: 0 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #3e3e3e;
     color: #8e8d8f;
+    font-size: 0.81em;
 
     .footer-left {
         a { 
@@ -57,7 +64,7 @@ const StyleFooter = styled.footer`
             li {
                 margin: 0 1em;
                 svg {
-                    margin-right: .5em;
+                    margin-right: .4em;
                     transition: .3s all ease;
                 }
                 &:hover svg {
