@@ -24,7 +24,8 @@ const Header = () => {
 }
 const StyleHeader = styled.header`
     max-width: 100%;
-    height: 5em;
+    //height: 5em;
+    padding: 1.8% 0;
     background: #242124;
     display: flex;
     justify-content: space-between;

@@ -44,8 +44,7 @@ const Footer = () => {
 
 const StyleFooter = styled.footer`
     max-width: 100%;
-    height: 4em;
-    //margin: 0 4%;
+    padding: 1% 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +61,7 @@ const StyleFooter = styled.footer`
             display: flex;
 
             li {
-                margin: 0 1em;
+                margin-right: 2em;
                 svg {
                     margin-right: .4em;
                     transition: .3s all ease;
