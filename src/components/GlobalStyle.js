@@ -35,7 +35,7 @@ const GlogalStyle = createGlobalStyle`
         list-style: none;
     }
     article {
-        
+        margin-top: 7%;
         min-height: 80vh;
     }
     .button {

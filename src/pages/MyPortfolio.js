@@ -1,9 +1,13 @@
 import React from 'react'
+import FactBlock from '../components/FactBlock'
 
 const MyPortfolio = () => {
     return (
         <article>
-            <h1 style={{marginTop: "5em"}} >Moje porfólio</h1>
+            <FactBlock 
+                icon="1 rok skusenosti"
+                heading="Portfolio"
+            />
         </article>
     )
 }

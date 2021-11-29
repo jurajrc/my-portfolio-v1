@@ -36,6 +36,7 @@ const StyleHeader = styled.header`
     right: 0;
     margin: 0 4%;
     border-bottom: 1px solid #3e3e3e;
+    z-index: 2;
 
     .logo {
         width: 2.5em;
