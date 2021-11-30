@@ -6,6 +6,7 @@ import ignite from '../image/small/img-ignite-s.png'
 import weatcher from '../image/small/img-weacher-s.png'
 import tunes from '../image/small/img-tunes-s.png'
 import player from  '../image/small/img-player-s.png'
+import bart_web from '../image/small/img-bart-web-s.png'
 import jurajrc from '../image/small/img-jurajrc-s.png'
 import stolar1 from '../image/small/img-stolarstvo-v1-s.png'
 
@@ -45,6 +46,13 @@ function allgallery () {
             url: "gallery/web2",
             http: "http://daniellaart.6f.sk/",
             image: player
+        },
+        {
+            name: "bart-web",
+            id: uuidv4(),
+            url: "gallery/web1.1",
+            http: "http://jurajrc.6f.sk/",
+            image: bart_web
         },
         {
             name: "web1",
