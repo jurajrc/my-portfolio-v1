@@ -29,6 +29,7 @@ const Skills = () => {
                 <Package npm="Styled component" />
                 <Package npm="Framer motion" />
                 <Package npm="Axios" />
+                <Package npm="emailjs-com" />
             </Wrap>
         </StyleSkills>
     )
