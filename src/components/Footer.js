@@ -51,6 +51,9 @@ const StyleFooter = styled.footer`
     border-top: 1px solid #3e3e3e;
     color: #8e8d8f;
     font-size: 0.81em;
+    @media (max-width: 750px) {
+        flex-direction: column;
+    }
 
     .footer-left {
         a { 
@@ -59,9 +62,16 @@ const StyleFooter = styled.footer`
         }
         ul {
             display: flex;
+            @media (max-width: 750px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
             li {
                 margin-right: 2em;
+                @media (max-width: 750px) {
+                    margin: 1em;
+                }
                 svg {
                     margin-right: .4em;
                     transition: .3s all ease;
