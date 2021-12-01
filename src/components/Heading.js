@@ -32,6 +32,9 @@ const StyleHeading = styled.div`
             50%  { left: 90%; }
             100% { left: 0%;  }
         }
+        @media (max-width: 500px) {
+            font-size: 75%;
+        }
     
 `
 
