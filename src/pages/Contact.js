@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FactBlock from '../components/FactBlock'
 import globus from '../image/global-digital-planet.svg'
+import Heading from '../components/Heading'
 // Style
 import styled from 'styled-components'
 // Animation
 import { motion } from 'framer-motion'
-import Heading from '../components/Heading'
+import { AnimatePresence } from 'framer-motion'
 // Send Email
 import emailjs from 'emailjs-com'
+import SendMessage from '../components/SendMessage'
 
 const Contact = () => {
+    const [isSend, setIsSend] = useState(false)
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -21,10 +24,15 @@ const Contact = () => {
               console.log(error.text);
           });
           e.target.reset()
+          setIsSend(true)
       };
 
     return (
         <article>
+            <AnimatePresence>
+            {isSend && ( <SendMessage toggle={setIsSend}/> )}
+            </AnimatePresence>
+            
             <FactBlock heading="Kontakt" icon="Napíšte mi" />
             <Content>
                 <div className="left">
@@ -62,10 +70,14 @@ const Content = styled(motion.div)`
     padding: 4em 0;
     .left {
         width: 35%;
+        display: flex;
+        justify-content: center;
         img {
-            //padding-left: 5%;
             width: 100%;
             fill: #0080ff;
+        }
+        @media (max-width: 1000px) {
+            display: none;
         }
     }
     .right {
@@ -75,6 +87,9 @@ const Content = styled(motion.div)`
         align-items: center;
         flex-direction: column;
         padding-bottom: 5em;
+        @media (max-width: 800px) {
+            width: 100%;
+        }
         
         input[type="text"],
         input[type="email"] {
@@ -93,6 +108,9 @@ const Content = styled(motion.div)`
                 border-radius: 1em;
                 border: 2px solid #0080ff;
             }
+            @media (max-width: 500px) {
+                width: 20em;
+            }
         }
         textarea {
             width: 30em;
@@ -106,6 +124,9 @@ const Content = styled(motion.div)`
                 border-radius: 1em;
                 border: 2px solid #0080ff;
             }
+            @media (max-width: 500px) {
+                width: 20em;
+            }
         }
         input[type="submit"] {
             padding: 0.5em 0.826em;
@@ -116,6 +137,11 @@ const Content = styled(motion.div)`
             border-radius: 3.125em;
             width: 12em;
             margin-top: 1em;
+            @media (max-width: 500px) {
+                justify-content: center;
+                display: flex;
+                margin: 1em auto;
+        }
         }
     }
 `
