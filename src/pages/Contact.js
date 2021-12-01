@@ -68,6 +68,10 @@ const Content = styled(motion.div)`
     display: flex;
     justify-content: space-evenly;
     padding: 4em 0;
+    @media (max-width: 500px) {
+            padding: 1em 0;
+        }
+
     .left {
         width: 35%;
         display: flex;
@@ -79,6 +83,7 @@ const Content = styled(motion.div)`
         @media (max-width: 1000px) {
             display: none;
         }
+        
     }
     .right {
         width: 50%;
@@ -89,6 +94,9 @@ const Content = styled(motion.div)`
         padding-bottom: 5em;
         @media (max-width: 800px) {
             width: 100%;
+        }
+        @media (max-width: 500px) {
+            padding-bottom: 1em;
         }
         
         input[type="text"],
@@ -126,6 +134,7 @@ const Content = styled(motion.div)`
             }
             @media (max-width: 500px) {
                 width: 20em;
+                height: 10em;
             }
         }
         input[type="submit"] {
@@ -143,6 +152,7 @@ const Content = styled(motion.div)`
                 margin: 1em auto;
         }
         }
+        
     }
 `
 
