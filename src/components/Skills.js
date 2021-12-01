@@ -21,7 +21,7 @@ const Skills = () => {
             <OneSkill technologi="PHP" strong="25" />
             <OneSkill technologi="Figma" strong="25" />
             <div className="nadpis">
-            <h3>React a moje opľúbené npm knižnice</h3>
+                <h3>React a moje opľúbené npm knižnice</h3>
             </div>
             <Wrap>
                 <Package npm="Router" />
@@ -38,19 +38,28 @@ const StyleSkills = styled.div`
 
     width: 100%;
     margin: 3em 0;
+    @media (max-width: 1100px) {
+        margin: 1em 0;
+    }
     .nadpis {
         display: flex;
         h3 {
             padding: 6em 0 1em 0;
             border-bottom: 2px solid #3e3e3e;
             position: relative;
+            @media (max-width: 1100px) {
+                padding: 2em 0 1em;
+                text-align: center;
+            }
+            @media (max-width: 600px) {
+                margin: 0 auto;
+            }
             
         }
         h3:after {
             content: "";
             position: absolute;
             bottom: -2px;
-            //left: 90%;
             width: 10%;
             border-bottom: 2px solid #0080ff;
             animation: move 8s infinite ease-in-out;

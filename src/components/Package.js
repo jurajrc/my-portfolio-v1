@@ -19,6 +19,7 @@ const StylePackage = styled.div`
         flex-basis: 10rem;
         margin: 2rem 0rem;
     }
+    
 
     .icon {
         display: flex;
@@ -41,6 +42,9 @@ const StylePackage = styled.div`
             transform: translate(-50%, -50%);
             padding: 1rem;
         }
+    }
+    @media (max-width: 500px) {
+        font-size: 70%;
     }
 `
 

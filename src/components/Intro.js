@@ -36,13 +36,26 @@ const Intro = () => {
 }
 const StyleIntro = styled.div`
     display: flex;
-    margin: 10% auto 0;
+    margin: 12% auto 0;
     width: 80%;
+    @media (max-width: 1100px) {
+        flex-direction: column;
+        }
+    @media (max-width: 900px) {
+        margin-top: 8em;
+        }
     .intro-left {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         margin-left: 5%;
+        @media (max-width: 1160px) {
+            margin-left: 0;
+            font-size: 90%;
+        }
+        @media (max-width: 400px) {
+            font-size: 80%;
+        }
         .border {
             width: 28em;
             height: 28em;
@@ -52,6 +65,10 @@ const StyleIntro = styled.div`
             box-shadow: -1px -1px 59px 9px rgb(0 0 0 / 75%);
             display: flex;
             justify-content: center;
+            @media (max-width: 650px) {
+            width: 20em;
+            height: 20em;
+            }
         }
         .img {
             width: 25em;
@@ -60,9 +77,15 @@ const StyleIntro = styled.div`
             border-radius: 50%;
             overflow: hidden;
             img {
-                width: 25em;
+                width: 100%;
                 filter: grayscale(100%);
                 cursor: grab;
+                
+            }
+            @media (max-width: 650px) {
+            width: 17.5em;
+            height: 17.5em;
+
             }
         }
     }
@@ -84,6 +107,29 @@ const StyleIntro = styled.div`
         }
         .button-intro {
             margin-top: 5%;
+        }
+        @media (max-width: 1100px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 2em 0 0 0;
+            p {
+                margin: 1.5% auto;
+                font-size: 0.9em;
+                width: 80%;
+            }
+            .button-intro {
+                margin: 5% auto;
+            }
+        }
+        @media (max-width: 650px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                width: 100%;
+            }
         }
     }
 `

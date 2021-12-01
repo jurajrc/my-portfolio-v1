@@ -21,6 +21,9 @@ const OneSkill = ({ technologi, strong }) => {
 
 const StyleOneSkill = styled.div`
     margin: 2% 15% 0;
+    @media (max-width: 500px) {
+        margin: 2% 5% 0;
+    }
 
     .bar-top {
         display: flex;

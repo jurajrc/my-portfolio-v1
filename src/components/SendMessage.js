@@ -28,11 +28,12 @@ const StyleSend = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #ffffff6f;
+    background: #ffffff4b;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 20;
+    backdrop-filter: blur(2px);
     overflow: hidden;
 `
 const Center = styled(motion.div)`

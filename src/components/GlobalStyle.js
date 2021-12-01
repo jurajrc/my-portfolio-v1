@@ -35,7 +35,6 @@ const GlogalStyle = createGlobalStyle`
         list-style: none;
     }
     article {
-        margin-top: 7%;
         min-height: 80vh;
     }
     .button {
@@ -46,7 +45,6 @@ const GlogalStyle = createGlobalStyle`
         border: 2px solid rgb(0, 128, 255);
         border-radius: 3.125em;
         width: 9.375em;
-        //box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.6);
     }
 `
 export default GlogalStyle
