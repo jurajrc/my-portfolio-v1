@@ -28,7 +28,7 @@ const Intro = () => {
                         boxShadow: "0px 0px 10px rgb(0, 125, 255)"
                     }}
                     className="button button-intro">
-                    <Link to="/constact" >Kontakt</Link>
+                    <Link to="/contact" >Kontakt</Link>
                 </motion.div>
             </div>
         </StyleIntro>
