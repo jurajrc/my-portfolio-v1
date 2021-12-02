@@ -18,6 +18,13 @@ const Header = () => {
                 </Link>
                 <h3>Juraj Kubičár</h3>
             </Flex>
+
+            {/* <Burger onClick={() => dispatch({ type: 'OPEN_IS' })}>
+                <Line1 className={isOpenNav ? "l1" : ""}/>
+                <Line2 className={isOpenNav ? "l2" : ""}/>
+                <Line3 className={isOpenNav ? "l3" : ""}/>
+            </Burger> */}
+
             <Nav />
         </StyleHeader>
     )
@@ -56,6 +63,54 @@ const StyleHeader = styled.header`
 const Flex = styled(motion.div)`
     display: flex;
     align-items: center;
+`
+
+// burger
+const Burger = styled.div`
+    width: 1.4em;
+    height: 1.2em;
+    position: absolute;
+    top: 1.8em;
+    right: 1.8em;
+    cursor: pointer;
+    display: none;
+    @media screen and (max-width: 650px) {
+        display: block;
+    }
+    @media (max-width: 500px) {
+        top: 1.3em;
+    }
+    .l1 {
+    transform: rotate(45deg) translate(26%, 250%);
+    }
+    .l2 {
+        transform: translateY(-50%) translateX(100%);
+        opacity: 0;
+    }
+    .l3 {
+        transform: rotate(-45deg)translate(26%, -250%);
+    }
+`
+const Line = styled(motion.div)`
+    width: 1.4em;
+    height: 0.15em;
+    background: white;
+    position: absolute;
+    transition: 500ms all ease;
+    
+`
+const Line1 = styled(Line)`
+    top: 0;
+    transform: rotate(0deg) translate(0%, 0%);
+    
+`
+const Line2 = styled(Line)`
+    top: 50%;
+    transform: translateY(-50%);
+`
+const Line3 = styled(Line)`
+    bottom: 0;
+    transform: rotate(0deg) translate(0%, 0%);
 `
 
 export default Header

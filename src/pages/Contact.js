@@ -24,7 +24,7 @@ const Contact = () => {
               console.log(error.text);
           });
           e.target.reset()
-          setIsSend(true)
+          setIsSend(!isSend)
       };
 
     return (
