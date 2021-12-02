@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import myPhoto from '../image/my-photo-2.JPG'
-import plane from '../image/airplane1-s.png'
+import myPhoto from '../image/my-photo-3.webp'
+import myPhoto_s from '../image/my-photo-3-s.webp'
 // style
 import styled from 'styled-components'
 // animation
@@ -13,7 +13,10 @@ const Intro = () => {
             <div className="intro-left">
                 <div className="border">
                     <div className="img">
-                        <motion.img whileHover={{scale: 1.1}} transition={{ type: "spring", stiffness: 100 }} src={myPhoto} alt="Juraj" />
+                        <picture >
+                            <source media="(max-width: 40em)" srcSet={myPhoto_s} />
+                            <motion.img  whileHover={{scale: 1.1}} src={myPhoto} alt="Juraj" />
+                        </picture>
                     </div>
                 </div>
             </div>
