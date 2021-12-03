@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faInstagram, faAirbnb } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 // style
 import styled from 'styled-components'
 import { faPlane } from '@fortawesome/free-solid-svg-icons'

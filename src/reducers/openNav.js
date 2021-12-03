@@ -1,9 +1,13 @@
 const openNavReducer = (state = false, action) => {
     switch (action.type) {
         case 'toggleOpenNav':
-            return !state
+            return !state;
+        case 'OPEN':
+            return true;
+        case 'CLOSE':
+            return false;
         default:
-            return state
+            return state;
     }
 }
 

@@ -6,7 +6,6 @@ import Heading from '../components/Heading'
 import styled from 'styled-components'
 // Animation
 import { motion } from 'framer-motion'
-import { AnimatePresence } from 'framer-motion'
 // Send Email
 import emailjs from 'emailjs-com'
 import SendMessage from '../components/SendMessage'
@@ -29,9 +28,8 @@ const Contact = () => {
 
     return (
         <article>
-            <AnimatePresence>
+            
             {isSend && ( <SendMessage toggle={setIsSend}/> )}
-            </AnimatePresence>
             
             <FactBlock heading="Kontakt" icon="Napíšte mi" />
             <Content>
@@ -46,7 +44,7 @@ const Contact = () => {
                         <input type="email" placeholder="E-mail"          name="email" />
                         <input type="text"   placeholder="Predmet"         name="subject" />
                         <div className="area">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Vaša správa" name="message"></textarea>
+                            <textarea cols="30" rows="10" placeholder="Vaša správa" name="message"></textarea>
                         </div>
                         
                         <motion.input 

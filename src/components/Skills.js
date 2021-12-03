@@ -2,7 +2,6 @@ import React from 'react'
 // Style
 import styled from 'styled-components'
 // Anime
-import { motion } from 'framer-motion'
 import OneSkill from './OneSkill'
 import Package from './Package'
 
