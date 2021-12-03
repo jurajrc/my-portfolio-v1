@@ -7,9 +7,15 @@ import styled from 'styled-components'
 import airplane from '../image/airplane1-s.png'
 // Animetion
 import { motion } from 'framer-motion'
+// Redux
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const Header = () => {
+    // Redux State
+    const isOpenNav = useSelector(state => state.isOpenNav)
+    const dispatch = useDispatch()
+
     return (
         <StyleHeader>
             <Flex >
@@ -19,13 +25,14 @@ const Header = () => {
                 <h3>Juraj Kubičár</h3>
             </Flex>
 
-            {/* <Burger onClick={() => dispatch({ type: 'OPEN_IS' })}>
+            <Burger onClick={() => dispatch({ type: 'toggleOpenNav' })}>
                 <Line1 className={isOpenNav ? "l1" : ""}/>
                 <Line2 className={isOpenNav ? "l2" : ""}/>
                 <Line3 className={isOpenNav ? "l3" : ""}/>
-            </Burger> */}
-
+            </Burger>
+            
             <Nav />
+
         </StyleHeader>
     )
 }
@@ -70,12 +77,13 @@ const Burger = styled.div`
     width: 1.4em;
     height: 1.2em;
     position: absolute;
-    top: 1.8em;
+    top: 1.5em;
     right: 1.8em;
     cursor: pointer;
     display: none;
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 800px) {
         display: block;
+        z-index: 40;
     }
     @media (max-width: 500px) {
         top: 1.3em;
