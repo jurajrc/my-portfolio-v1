@@ -7,6 +7,8 @@ import MyPortfolio from './pages/MyPortfolio';
 import Contact from './pages/Contact';
 import GlogalStyle from './components/GlobalStyle';
 import Footer from './components/Footer';
+// Animation
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const location = useLocation()
@@ -14,19 +16,20 @@ function App() {
   return (
     <div className="App">
       <GlogalStyle />
-      <Header />
-      
-      <Switch>
-        <Route path="/" exact >
-          <AboutMy />
-        </Route>
-        <Route path="/portfolio">
-          <MyPortfolio />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-      </Switch>
+        <Header />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname} >
+          <Route path="/" exact >
+            <AboutMy />
+          </Route>
+          <Route path="/portfolio">
+            <MyPortfolio />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </AnimatePresence>
 
       <Footer />
 
