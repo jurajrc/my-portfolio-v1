@@ -15,7 +15,8 @@ export const fadeIn = {
         opacity: 0,
         transition: {
             duration: 0.5,
-            ease: "easeOut"
+            ease: "easeOut",
+            then: "afterChildren",
         }
     }
 }
@@ -37,6 +38,54 @@ export const moveTextRight = {
     exit: {
         opacity: 0,
         y: "-50vw",
+        transition: {
+            duration: 1,
+        } 
+    }
+}
+
+export const fadeIn2 = {
+    hidden: {
+        opacity: 0,
+        transition: {
+            duration: 0.75,
+            ease: "easeOut"
+        }
+    },
+    show: {
+        opacity: 1,
+        then: "beforeChildren",
+        staggerChildren: 1,
+        duration: 2
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeOut",
+            then: "afterChildren",
+        }
+    }
+}
+
+export const moveTextRight2 = {
+    hidden: {
+        opacity: 0,
+        x: "50vw",
+    },
+    show: {
+        opacity: 1,
+        x: "0%",
+        transition: {
+            duration: 1,
+            delay: 0.2,
+            type: 'spring',
+            stiffness: 200
+        }
+    },
+    exit: {
+        opacity: 0,
+        x: "-50vw",
         transition: {
             duration: 1,
         } 
