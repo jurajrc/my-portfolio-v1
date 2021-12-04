@@ -38,7 +38,7 @@ const Nav = () => {
         }
         
         
-    }, [])
+    }, [width])
 
 
     const {pathname} = useLocation()

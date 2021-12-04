@@ -6,12 +6,13 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 // data
 import data from '../components/data'
+import { pageAnimation } from '../animations'
 
 const MyPortfolio = () => {
     // State
     const [allData, setAllData] = useState(data)
     return (
-        <article>
+        <motion.article variants={pageAnimation} initial="hidden" animate="show" exit="exit" > 
             <FactBlock icon="1 rok skúsenosti" heading="Portfólio" />
             <StyleProjects>
                 {
@@ -24,7 +25,7 @@ const MyPortfolio = () => {
                     ))
                 }
             </StyleProjects>
-        </article>
+        </motion.article>
     )
 }
 const StyleProjects = styled(motion.div)`

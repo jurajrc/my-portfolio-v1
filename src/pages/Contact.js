@@ -5,10 +5,11 @@ import Heading from '../components/Heading'
 // Style
 import styled from 'styled-components'
 // Animation
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 // Send Email
 import emailjs from 'emailjs-com'
 import SendMessage from '../components/SendMessage'
+import { pageAnimation } from '../animations'
 
 const Contact = () => {
     const [isSend, setIsSend] = useState(false)
@@ -27,9 +28,10 @@ const Contact = () => {
       };
 
     return (
-        <article>
-            
-            {isSend && ( <SendMessage toggle={setIsSend}/> )}
+        <motion.article variants={pageAnimation} initial="hidden" animate="show" exit="exit" >
+            <AnimatePresence>
+                {isSend && ( <SendMessage toggle={setIsSend}/> )}
+            </AnimatePresence>
             
             <FactBlock heading="Kontakt" icon="Napíšte mi" />
             <Content>
@@ -37,7 +39,7 @@ const Contact = () => {
                     <img src={globus} alt="digital" />
                 </div>
                 <div className="right">
-                    <Heading heading="Páčia sa Vám moje práce? Napíšte mi "/>
+                    <Heading heading="Páčia sa Vám moje práce? Napíšte mi" />
                     
                     <form onSubmit={sendEmail} >
                         <input type="text"   placeholder="Meno Priezvisko" name="name" />
@@ -58,7 +60,7 @@ const Contact = () => {
 
                 </div>
             </Content>
-        </article>
+        </motion.article>
     )
 }
 

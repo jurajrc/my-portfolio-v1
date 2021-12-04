@@ -1,13 +1,15 @@
 import React from 'react'
 import Intro from '../components/Intro'
 import Skills from '../components/Skills'
+import { motion } from 'framer-motion'
+import { pageAnimation } from '../animations'
 
 const AboutMy = () => {
     return (
-        <article>
+        <motion.article variants={pageAnimation} initial="hidden" animate="show" exit="exit" >
             <Intro />
             <Skills />
-        </article>
+        </motion.article>
     )
 }
 
