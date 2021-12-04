@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <StyleHeader>
             <Flex >
-                <Link to="/about" className="logo">
+                <Link to="/" className="logo">
                     <motion.img whileHover={{ rotate: -90 }} src={airplane} alt="lietdielko" />
                 </Link>
                 <h3>Juraj Kubičár</h3>

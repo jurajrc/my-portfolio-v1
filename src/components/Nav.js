@@ -57,7 +57,7 @@ const Nav = () => {
                 <AnimatePresence>
                 <motion.ul variants={fadeIn2} initial="hidden" animate="show" exit="exit">
                     <motion.li variants={width < 800 ? moveTextRight2 : ''} >
-                        <Link onClick={closeNav} to="/about" >O mne</Link>
+                        <Link onClick={closeNav} to="/" >O mne</Link>
                         <Line
                             transition={{duration: 0.75}}
                             initial={{width: "0%"}}
