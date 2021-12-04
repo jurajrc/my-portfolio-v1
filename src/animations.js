@@ -7,14 +7,43 @@ export const pageAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.75,
-        }
+            duration: 0.5,
+            when: "beforeChildren",
+            staggerChildren: 0.25,
+        },
     },
     exit: {
         opacity: 0,
         y: 300,
         transition: {
+            duration: 0.5,
+        }
+    }
+}
+
+export const titleAnim = {
+    hidden: {
+        y: 200,
+    },
+    show: {
+        y: 0,
+        transition: { 
             duration: 0.75,
+            ease: "easeOut",
+        },
+    },
+}
+
+
+
+export const fade = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            duration: 0.5
         }
     }
 }
@@ -75,9 +104,11 @@ export const fadeIn2 = {
     },
     show: {
         opacity: 1,
-        then: "beforeChildren",
-        staggerChildren: 1,
-        duration: 2
+        transition: {
+            duration: 0.5,
+            then: "beforeChildren",
+            staggerChildren: 0.25,
+        }
     },
     exit: {
         opacity: 0,
@@ -98,17 +129,16 @@ export const moveTextRight2 = {
         opacity: 1,
         x: "0%",
         transition: {
-            duration: 1,
-            delay: 0.2,
-            type: 'spring',
-            stiffness: 200
+            type: "spring",
+            mass: 0.5
         }
     },
     exit: {
         opacity: 0,
         x: "-50vw",
         transition: {
-            duration: 1,
+            duration: 0.5,
         } 
     }
 }
+

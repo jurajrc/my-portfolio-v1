@@ -1,30 +1,38 @@
 import React, { useState } from 'react'
+// Components
 import FactBlock from '../components/FactBlock'
+import ScrollTop from '../components/ScrollTop'
 // Style
 import styled from 'styled-components'
 // animate
 import { motion } from 'framer-motion'
-// data
+import { pageAnimation, popup } from '../animations'
+// Data
 import data from '../components/data'
-import { pageAnimation } from '../animations'
 
 const MyPortfolio = () => {
     // State
     const [allData, setAllData] = useState(data)
     return (
-        <motion.article variants={pageAnimation} initial="hidden" animate="show" exit="exit" > 
+        <motion.article 
+            exit="exit"
+            variants={pageAnimation} 
+            initial="hidden" 
+            animate="show"  
+        > 
             <FactBlock icon="1 rok skúsenosti" heading="Portfólio" />
             <StyleProjects>
                 {
                     allData.map(item => (
-                        <StyleOneProject>
-                            <a href={item.http}>
+                        <StyleOneProject  key={item.id} >
+                            <a href={item.http} target="_blank">
                                 <img src={item.image} alt={item.id} />
                             </a>
                         </StyleOneProject>
                     ))
                 }
             </StyleProjects>
+            <ScrollTop />
         </motion.article>
     )
 }
@@ -38,7 +46,7 @@ const StyleProjects = styled(motion.div)`
         margin: 1em 0;
     }
 `
-const StyleOneProject = styled.div`
+const StyleOneProject = styled(motion.div)`
     width: 37em;
     height: 20.25em;
     overflow: hidden;

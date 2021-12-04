@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
+// Component
 import FactBlock from '../components/FactBlock'
-import globus from '../image/global-digital-planet.svg'
 import Heading from '../components/Heading'
+import ScrollTop from '../components/ScrollTop'
+// Image
+import globus from '../image/global-digital-planet.svg'
 // Style
 import styled from 'styled-components'
 // Animation
 import { AnimatePresence, motion } from 'framer-motion'
+import { pageAnimation } from '../animations'
 // Send Email
 import emailjs from 'emailjs-com'
 import SendMessage from '../components/SendMessage'
-import { pageAnimation } from '../animations'
 
 const Contact = () => {
     const [isSend, setIsSend] = useState(false)
@@ -28,7 +31,12 @@ const Contact = () => {
       };
 
     return (
-        <motion.article variants={pageAnimation} initial="hidden" animate="show" exit="exit" >
+        <motion.article 
+            exit="exit"
+            variants={pageAnimation} 
+            initial="hidden" 
+            animate="show" 
+        >
             <AnimatePresence>
                 {isSend && ( <SendMessage toggle={setIsSend}/> )}
             </AnimatePresence>
@@ -60,6 +68,7 @@ const Contact = () => {
 
                 </div>
             </Content>
+            <ScrollTop />
         </motion.article>
     )
 }
@@ -146,6 +155,7 @@ const Content = styled(motion.div)`
             border-radius: 3.125em;
             width: 12em;
             margin-top: 1em;
+            cursor: pointer;
             @media (max-width: 500px) {
                 justify-content: center;
                 display: flex;

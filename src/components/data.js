@@ -58,7 +58,7 @@ function allgallery () {
             name: "web1",
             id: uuidv4(),
             url: "gallery/web1",
-            http: "https://www.jurajrc.sk/",
+            http: "http://www.jurajrc.sk/",
             image: jurajrc
         },
         {

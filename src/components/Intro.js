@@ -1,30 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// Image
 import myPhoto from '../image/my-photo-3.webp'
 import myPhoto_s from '../image/my-photo-3-s.webp'
-// style
+// Style
 import styled from 'styled-components'
-// animation
+// Animation
 import { motion } from 'framer-motion'
+import { fade, titleAnim } from '../animations'
 
 const Intro = () => {
     return (
         <StyleIntro>
             <div className="intro-left">
-                <div className="border">
+                <motion.div variants={fade} className="border">
                     <div className="img">
                         <picture >
                             <source media="(max-width: 40em)" srcSet={myPhoto_s} />
                             <motion.img  whileHover={{scale: 1.1}} src={myPhoto} alt="Juraj" />
                         </picture>
                     </div>
-                </div>
+                </motion.div>
             </div>
             <div className="intro-right">
-                <span>Frontend-vývojár</span>
-                <h1>Juraj Kubičár</h1>
-                <p>Vitajte na webe môjho osobného portfólia. Volám sa Juraj Kubičár a som junior fontend vývojár. Dávam si za úlohu vytvárať kreatívna weby a aplikácie s peknýmy detajlami. Dizajn obohacujem o vlastné návrhy, ktoré sú precízne vyrobené na základe vášho želania.</p>
+                <Hide>
+                    <motion.h3 variants={titleAnim} >Frontend-vývojár</motion.h3>
+                </Hide>
+                <Hide>
+                    <motion.h1 variants={titleAnim} >Juraj Kubičár</motion.h1>
+                </Hide>
+                <Hide>
+                    <motion.p variants={fade} >Vitajte na webe môjho osobného portfólia. Volám sa Juraj Kubičár a som junior fontend vývojár. Dávam si za úlohu vytvárať kreatívna weby a aplikácie s peknými detajlami. Dizajn obohacujem o vlastné návrhy, ktoré sú precízne vyrobené na základe vášho želania.</motion.p>
+                </Hide>
                 <motion.div 
+                    variants={fade}
                     whileHover={{
                         scale: 1.03,
                         textShadow: "0px 0px 4px #f8f8f8",
@@ -94,7 +103,7 @@ const StyleIntro = styled.div`
     }
     .intro-right {
         margin-left: 5%;
-        span {
+        h3 {
             color: #8e8d8f;
         }
         h1 {
@@ -135,6 +144,9 @@ const StyleIntro = styled.div`
             }
         }
     }
+`
+const Hide = styled.div`
+    overflow: hidden;
 `
 
 export default Intro

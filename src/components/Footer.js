@@ -4,6 +4,8 @@ import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-
 // style
 import styled from 'styled-components'
 import { faPlane } from '@fortawesome/free-solid-svg-icons'
+// animation
+import { motion } from 'framer-motion'
 
 const Footer = () => {
     return (
@@ -42,7 +44,7 @@ const Footer = () => {
     )
 }
 
-const StyleFooter = styled.footer`
+const StyleFooter = styled(motion.footer)`
     max-width: 100%;
     padding: 1% 0;
     display: flex;

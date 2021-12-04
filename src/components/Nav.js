@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 //styled
 import styled from 'styled-components'
 // animation
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { fadeIn2, moveTextRight2 } from '../animations'
 
 
@@ -47,24 +47,24 @@ const Nav = () => {
         if(width <= 800) {
             dispatch({ type: 'toggleOpenNav' })
         }
-        console.log(isOpenNav);
+        //console.log(isOpenNav);
     }
 
     return (
         <StyleNav >
             
             {isOpenNav && (
-
-                <motion.ul  variants={fadeIn2} initial="hidden" animate="show" exit="exit">
-                    <motion.li variants={moveTextRight2} >
-                        <Link onClick={closeNav} to="/" >O mne</Link>
+                <AnimatePresence>
+                <motion.ul variants={fadeIn2} initial="hidden" animate="show" exit="exit">
+                    <motion.li variants={width < 800 ? moveTextRight2 : ''} >
+                        <Link onClick={closeNav} to="/about" >O mne</Link>
                         <Line
                             transition={{duration: 0.75}}
                             initial={{width: "0%"}}
-                            animate={{width: pathname === "/" ? "100%" : "0%"}}
+                            animate={{width: pathname === "/about" ? "100%" : "0%"}}
                         />
                     </motion.li>
-                    <motion.li variants={moveTextRight2}>
+                    <motion.li variants={width < 800 ? moveTextRight2 : ''}>
                         <Link onClick={closeNav} to="portfolio"  >Portfólio</Link>
                         <Line 
                             transition={{duration: 0.75}}
@@ -72,7 +72,7 @@ const Nav = () => {
                             animate={{width: pathname === "/portfolio" ? "100%" : "0%"}}
                         />
                     </motion.li>
-                    <motion.li  variants={moveTextRight2}>
+                    <motion.li variants={width < 800 ? moveTextRight2 : ''}>
                         <Link onClick={closeNav} to="contact" >Kontakt</Link>
                         <Line 
                             transition={{duration: 0.75}}
@@ -81,6 +81,7 @@ const Nav = () => {
                         />
                     </motion.li>
                 </motion.ul>
+                </AnimatePresence>
             )}
             
         </StyleNav>
