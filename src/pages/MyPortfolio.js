@@ -23,9 +23,9 @@ const MyPortfolio = () => {
             <FactBlock icon="1 rok skúsenosti" heading="Portfólio" />
             <StyleProjects>
                 {
-                    allData.map(item => (
-                        <StyleOneProject  key={item.id} >
-                            <a href={item.http} target="_blank">
+                    allData.map((item, index) => (
+                        <StyleOneProject  key={index} variants={popup} >
+                            <a href={item.http} target="_blank" rel="noreferrer">
                                 <img src={item.image} alt={item.id} />
                             </a>
                         </StyleOneProject>
