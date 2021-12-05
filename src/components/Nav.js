@@ -61,7 +61,7 @@ const Nav = () => {
                         <Line
                             transition={{duration: 0.75}}
                             initial={{width: "0%"}}
-                            animate={{width: pathname === "/about" ? "100%" : "0%"}}
+                            animate={{width: pathname === "/" ? "100%" : "0%"}}
                         />
                     </motion.li>
                     <motion.li variants={width < 800 ? moveTextRight2 : ''}>

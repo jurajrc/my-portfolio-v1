@@ -7,7 +7,7 @@ import myPhoto_s from '../image/my-photo-3-s.webp'
 import styled from 'styled-components'
 // Animation
 import { motion } from 'framer-motion'
-import { fade, titleAnim } from '../animations'
+import { fade, moveTextRight2 } from '../animations'
 
 const Intro = () => {
     return (
@@ -24,16 +24,16 @@ const Intro = () => {
             </div>
             <div className="intro-right">
                 <Hide>
-                    <motion.h3 variants={titleAnim} >Frontend-vývojár</motion.h3>
+                    <motion.h3 variants={fade} >Frontend-vývojár</motion.h3>
                 </Hide>
-                <Hide>
-                    <motion.h1 variants={titleAnim} >Juraj Kubičár</motion.h1>
-                </Hide>
+                
+                    <motion.h1 variants={moveTextRight2} >Juraj Kubičár</motion.h1>
+                
                 <Hide>
                     <motion.p variants={fade} >Vitajte na webe môjho osobného portfólia. Volám sa Juraj Kubičár a som junior fontend vývojár. Dávam si za úlohu vytvárať kreatívna weby a aplikácie s peknými detajlami. Dizajn obohacujem o vlastné návrhy, ktoré sú precízne vyrobené na základe vášho želania.</motion.p>
                 </Hide>
                 <motion.div 
-                    variants={fade}
+                    variants={moveTextRight2}
                     whileHover={{
                         scale: 1.03,
                         textShadow: "0px 0px 4px #f8f8f8",
@@ -48,7 +48,7 @@ const Intro = () => {
 }
 const StyleIntro = styled.div`
     display: flex;
-    margin: 12% auto 0;
+    margin: 18% auto 0;
     width: 80%;
     @media (max-width: 1100px) {
         flex-direction: column;

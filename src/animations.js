@@ -133,12 +133,23 @@ export const moveTextRight2 = {
             mass: 0.5
         }
     },
-    exit: {
+    
+}
+
+// Skill Anime
+
+export const moveLeft = {
+    hidden: {
         opacity: 0,
         x: "-50vw",
+    },
+    show: {
+        opacity: 1,
+        x: 0,
         transition: {
-            duration: 0.5,
-        } 
-    }
+            duration: 1,
+        }
+    },
+    
 }
 

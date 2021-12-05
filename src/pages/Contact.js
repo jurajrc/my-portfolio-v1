@@ -47,7 +47,7 @@ const Contact = () => {
                     <img src={globus} alt="digital" />
                 </div>
                 <div className="right">
-                    <Heading heading="Páčia sa Vám moje práce? Napíšte mi" />
+                    <Heading  heading="Páčia sa Vám moje práce? Napíšte mi" />
                     
                     <form onSubmit={sendEmail} >
                         <input type="text"   placeholder="Meno Priezvisko" name="name" />

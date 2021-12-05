@@ -1,14 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+// Animation
+import { motion } from 'framer-motion'
+import { moveTextRight2 } from '../animations'
 
 const Heading = ({ heading }) => {
     return (
-        <StyleHeading>
+        <StyleHeading variants={moveTextRight2}>
             <h3>{heading}</h3>
         </StyleHeading>
     )
 }
-const StyleHeading = styled.div`
+const StyleHeading = styled(motion.div)`
     
         display: flex;
         h3 {
