@@ -36,6 +36,7 @@ const GlogalStyle = createGlobalStyle`
     }
     article {
         min-height: 80vh;
+        overflow-x: hidden;
     }
     .button {
         padding: 0.5em 0.826em;

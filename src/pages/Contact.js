@@ -53,9 +53,9 @@ const Contact = () => {
                         <input type="text"   placeholder="Meno Priezvisko" name="name" />
                         <input type="email" placeholder="E-mail"          name="email" />
                         <input type="text"   placeholder="Predmet"         name="subject" />
-                        <div className="area">
-                            <textarea cols="30" rows="10" placeholder="Vaša správa" name="message"></textarea>
-                        </div>
+                        
+                        <textarea  placeholder="Vaša správa" name="message"></textarea>
+                        
                         
                         <motion.input 
                             whileHover={{
@@ -101,17 +101,35 @@ const Content = styled(motion.div)`
         align-items: center;
         flex-direction: column;
         padding-bottom: 5em;
+        padding-left: 2em;
+        @media (max-width: 1000px) {
+            padding-left: 0;
+        }
         @media (max-width: 800px) {
             width: 100%;
         }
         @media (max-width: 500px) {
             padding-bottom: 1em;
         }
+        form {
+            width: 26em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            @media (max-width: 500px) {
+                width: 20em;
+                align-items: center;
+            } 
+            @media (max-width: 350px) {
+                width: 18em;
+            }
+        }
         
         input[type="text"],
         input[type="email"] {
             display: block;
-            width: 30em;
+            width: 100%;
             height: 3em;
             margin:   0.5em 0;
             border: 2px solid #8d8e8f;
@@ -125,15 +143,15 @@ const Content = styled(motion.div)`
                 border-radius: 1em;
                 border: 2px solid #0080ff;
             }
-            @media (max-width: 500px) {
-                width: 20em;
-            }
+            
         }
         textarea {
-            width: 30em;
+            width: 100%;
+            height: 11em;
             border: 2px solid #8d8e8f;
             background: transparent;
             padding: 1em 0 0 1em;
+            margin:   0.5em 0;
             color: #8d8e8f;
             outline: none;
             transition: 300ms all ease-in-out;
@@ -142,7 +160,6 @@ const Content = styled(motion.div)`
                 border: 2px solid #0080ff;
             }
             @media (max-width: 500px) {
-                width: 20em;
                 height: 10em;
             }
         }

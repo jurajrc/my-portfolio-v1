@@ -19,7 +19,7 @@ const AboutMy = () => {
             <Skills />
 
             <ScrollTop />
-        </motion.article>
+        </motion.article> 
     )
 }
 
