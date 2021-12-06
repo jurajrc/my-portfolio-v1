@@ -37,7 +37,7 @@ function allgallery () {
             name: "web3",
             id: uuidv4(),
             url: "gallery/web3",
-            http: "https://www.youtube.com/",
+            http: "http://letlomnica.6f.sk/",
             image: tunes
         },
         {
