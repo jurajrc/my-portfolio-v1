@@ -2,6 +2,7 @@ import React from 'react'
 // Component
 import Intro from '../components/Intro'
 import Skills from '../components/Skills'
+import FagSection from '../components/FagSection'
 import ScrollTop from '../components/ScrollTop'
 // Animation
 import { motion } from 'framer-motion'
@@ -17,6 +18,7 @@ const AboutMy = () => {
         >
             <Intro />
             <Skills />
+            <FagSection />
 
             <ScrollTop />
         </motion.article> 
