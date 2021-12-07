@@ -13,22 +13,49 @@ import { pageAnimation } from '../animations'
 // Send Email
 import emailjs from 'emailjs-com'
 import SendMessage from '../components/SendMessage'
+import ErrorMessage from '../components/ErrorMessage'
+import { useFormik } from 'formik'
+import * as yup from 'yup'
 
 const Contact = () => {
     const [isSend, setIsSend] = useState(false)
-
-    const sendEmail = (e) => {
-        e.preventDefault();
+    const [sendError, setSendError] = useState(false)
     
-        emailjs.sendForm('service_y91bs9a', 'template_i3io50w', e.target, 'user_d9OyGgUFBHz4YCiT8oJlH')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-          e.target.reset()
-          setIsSend(!isSend)
+    function sendEmail() {
+        emailjs.sendForm(
+            'service_y91bs9a', 
+            'template_i3io50w', 
+            '#contact-form', 
+            'user_d9OyGgUFBHz4YCiT8oJlH')
+            .then(res=>{
+                console.log(res);
+                setIsSend(!isSend)
+            }).catch(err=> {
+                console.log(err)
+                setSendError(!sendError)
+            });
       };
+
+    const validationSchema = yup.object({
+        name: yup.string().required("Zabudol si na meno."),
+        email: yup.string().email("Skús zadať správny email").required("Ani bez emailu to nepôjde =)."),
+        message: yup.string().required("A správa je kde ?")
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            message: ""
+        },
+        onSubmit:(values => {
+            console.log(JSON.stringify(values))
+            sendEmail();
+            formik.resetForm();
+        }),
+        validationSchema: validationSchema,
+
+    });
 
     return (
         <motion.article 
@@ -39,6 +66,7 @@ const Contact = () => {
         >
             <AnimatePresence>
                 {isSend && ( <SendMessage toggle={setIsSend}/> )}
+                {sendError && ( <ErrorMessage toggleError={setSendError}/> )}
             </AnimatePresence>
             
             <FactBlock heading="Kontakt" icon="Napíšte mi" />
@@ -49,12 +77,42 @@ const Contact = () => {
                 <div className="right">
                     <Heading  heading="Páčia sa Vám moje práce? Napíšte mi" />
                     
-                    <form onSubmit={sendEmail} >
-                        <input type="text"   placeholder="Meno Priezvisko" name="name" />
-                        <input type="email" placeholder="E-mail"          name="email" />
-                        <input type="text"   placeholder="Predmet"         name="subject" />
+                    <form id="contact-form" onSubmit={formik.handleSubmit} >
+                        <input 
+                            id="name"
+                            name="name" 
+                            type="text"   
+                            placeholder="Meno Priezvisko" 
+                            value={formik.values.name}
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                        />
+                        {formik.touched.name && formik.errors.name ? 
+                            <p className="error">{formik.errors.name}</p> : null}
+
+                        <input 
+                            id="email"
+                            name="email" 
+                            type="email" 
+                            placeholder="E-mail"
+                            value={formik.values.email}
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                        />
+                        { formik.touched.email && formik.errors.email ? 
+                            <p className="error" >{formik.errors.email}</p> : null }
+
                         
-                        <textarea  placeholder="Vaša správa" name="message"></textarea>
+                        <textarea 
+                            id="message" 
+                            placeholder="Vaša správa" 
+                            name="message"
+                            value={formik.values.message}
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                        ></textarea>
+                        { formik.touched.message && formik.errors.message ?
+                            <p className="error">{formik.errors.message}</p> : null }
                         
                         
                         <motion.input 
@@ -123,6 +181,11 @@ const Content = styled(motion.div)`
             } 
             @media (max-width: 350px) {
                 width: 18em;
+            }
+            .error {
+                color: #f90000;
+                font-size: 0.8rem;
+                //margin-top: 0.5rem;
             }
         }
         
