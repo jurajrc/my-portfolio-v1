@@ -18,7 +18,7 @@ const Footer = () => {
                         </a>
                     </li>
                     <li> 
-                        <a href="https://github.com/jurajrc" target="_blank" rel="noreferrer" >
+                        <a href="https://www.linkedin.com/in/juraj-kubi%C4%8D%C3%A1r-150390228/" target="_blank" rel="noreferrer" >
                             <FontAwesomeIcon icon={faLinkedin} />Linkedin
                         </a>
                     </li>
