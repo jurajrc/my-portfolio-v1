@@ -14,6 +14,9 @@ const Heading = ({ heading }) => {
 const StyleHeading = styled(motion.div)`
     
         display: flex;
+        @media (max-width: 600px) {
+            justify-content: center;
+        }
         h3 {
             padding: 2em 0 1em 0;
             margin-bottom: 1em;
