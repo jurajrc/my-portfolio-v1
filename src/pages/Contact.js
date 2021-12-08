@@ -185,7 +185,6 @@ const Content = styled(motion.div)`
             .error {
                 color: #f90000;
                 font-size: 0.8rem;
-                //margin-top: 0.5rem;
             }
         }
         
@@ -240,7 +239,7 @@ const Content = styled(motion.div)`
                 justify-content: center;
                 display: flex;
                 margin: 1em auto;
-        }
+            }
         }
         
     }
