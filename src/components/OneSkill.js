@@ -7,7 +7,7 @@ import { UseScroll } from './useScroll'
 
 const OneSkill = ({ technologi, strong }) => {
 
-    const [element, controls] = UseScroll()
+    const [element, controls] = UseScroll(1)
 
     const lineAnim = {
         hidden: {
