@@ -1,15 +1,25 @@
 import React from 'react'
+// Components
 import Toggle from './Toggle'
+import Heading from './Heading'
 // Style
 import styled from 'styled-components'
 // Animation
-import { motion } from 'framer-motion'
-import { AnimateSharedLayout } from 'framer-motion'
-import Heading from './Heading'
+import { motion, AnimateSharedLayout } from 'framer-motion'
+import { UseScroll } from './useScroll'
+import { scrollReveal } from '../animations'
 
 const FagSection = () => {
+
+    const [element, controls] = UseScroll(0.4)
+
     return (
-        <Fag>
+        <Fag 
+        variants={scrollReveal}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+        >
             <Heading heading="Otázky a odpovede" />
             
             <AnimateSharedLayout>
@@ -23,9 +33,9 @@ const FagSection = () => {
                         </p>
                     </div>
                 </Toggle>
-                <Toggle title="Aké mám koníčky">
+                <Toggle title="Aké mám koníčky?">
                     <div className="answer">
-                        <p>Bicykel</p>
+                        <p>Cyklistika</p>
                         <p>Plávanie</p>
                         <p>V neposlednom rade <a href="http://www.jurajrc.sk/">RC modelárstvo</a> </p>
                     </div>
@@ -37,6 +47,16 @@ const FagSection = () => {
 
 const Fag = styled(motion.section)`
     padding-bottom: 4em;
+    overflow: hidden;
+    @media (max-width: 600px) {
+        padding-bottom: 2em;
+    }
+    .question {
+        padding-top: 3em;
+        @media (max-width: 600px) {
+            padding-top: 1em;
+        }
+    }
     .flex-betwen {
         display: flex;
         justify-content: space-between;
@@ -45,6 +65,7 @@ const Fag = styled(motion.section)`
         cursor: pointer;
         img {
             width: 2em;
+            margin-right: 1em;
         }
     }
     .answer {
@@ -52,6 +73,7 @@ const Fag = styled(motion.section)`
             color: #adadad;
             font-size: 0.9em;
             margin: 0.5em 0;
+            line-height: 1.8;
         }
     }
     .fag-line {

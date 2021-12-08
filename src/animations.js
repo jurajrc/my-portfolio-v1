@@ -156,18 +156,20 @@ export const moveTextRight2 = {
     
 }
 
-// Skill Anime
+/**
+ * Scroll anim
+ */
 
-export const moveLeft = {
+export const scrollReveal = {
     hidden: {
         opacity: 0,
-        x: "-50vw",
+        scale: 0.5,
     },
     show: {
         opacity: 1,
-        x: 0,
+        scale: 1,
         transition: {
-            duration: 1,
+            duration: 0.75,
         }
     },
     
