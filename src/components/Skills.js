@@ -20,7 +20,7 @@ const Skills = () => {
             <OneSkill technologi="PHP" strong="25" />
             <OneSkill technologi="Figma" strong="25" />
             <div className="nadpis">
-                <h3>React a moje opľúbené npm knižnice</h3>
+                <h3>React a moje obľúbené npm knižnice</h3>
             </div>
             <Wrap>
                 <Package npm="Router" />
