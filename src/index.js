@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import allReducers from './reducers';
 
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'; // was BrowserRouter
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -17,9 +17,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store} >
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
