@@ -11,12 +11,12 @@ const SendMessage = ({ toggle }) => {
     return (
         <StyleSend variants={fadeIn} initial="hidden" animate="show" exit="exit" >
             <CenterSend variants={moveTextRight} >
-                <img src={ok} alt="chack" />
+                <img src={ok} alt="ok" />
                 <p>Správa bola odoslaná</p>
                 <motion.button whileHover={{
                     textShadow: "0px 0px 4px #f8f8f8",
                     boxShadow: "0px 0px 10px rgb(0, 125, 255)"
-                }} className="button" onClick={() => toggle(false)} >OK</motion.button>
+                }} className="button" onClick={() => toggle(false)} >Späť</motion.button>
             </CenterSend>
         </StyleSend>
     )
