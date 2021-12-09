@@ -14,7 +14,7 @@ const FagSection = () => {
     const [element, controls] = UseScroll(0.4)
 
     return (
-        <Fag 
+        <Fag
         variants={scrollReveal}
         animate={controls}
         initial="hidden"
@@ -29,7 +29,7 @@ const FagSection = () => {
                             Som poháňaný a motivovaný stať sa tak silným vývojárom, ako len môžem byť. Rád si udržiavam vysokú mieru učenia a vždy sa vystavujem novým rámcom, knižniciam a technológiám.
                         </p>
                         <p>
-                            Momentálne pokračujem v rozvoji svojich React zručností, v budúcnosti by som chcel rozvíjať svoje back end zručnosti, keďže by som sa nakoniec chcel venovať kariére full stack developera.
+                            Momentálne pokračujem v rozvoji svojich React + TypeScript zručností, v budúcnosti by som chcel rozvíjať svoje back end zručnosti, keďže by som sa nakoniec chcel venovať kariére full stack developera.
                         </p>
                     </div>
                 </Toggle>
