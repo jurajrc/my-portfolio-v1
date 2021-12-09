@@ -10,7 +10,7 @@ const ErrorMessage = ({ toggleError }) => {
     return (
         <StyleSend variants={fadeIn} initial="hidden" animate="show" exit="exit" >
             <CenterSend variants={moveTextRight} >
-                <img src={fail} alt="chack" />
+                <img src={fail} alt="error" />
                 <p>Nepodarilo sa Odoslať</p>
                 <motion.button whileHover={{
                     textShadow: "0px 0px 4px #f8f8f8",
