@@ -15,7 +15,7 @@ const ErrorMessage = ({ toggleError }) => {
                 <motion.button whileHover={{
                     textShadow: "0px 0px 4px #f8f8f8",
                     boxShadow: "0px 0px 10px rgb(0, 125, 255)"
-                }} className="button" onClick={() => toggleError(false)} >Not OK</motion.button>
+                }} className="button" onClick={() => toggleError(false)} >Späť</motion.button>
             </CenterSend>
         </StyleSend>
     )
