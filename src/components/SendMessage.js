@@ -22,6 +22,4 @@ const SendMessage = ({ toggle }) => {
     )
 }
 
-
-
 export default SendMessage

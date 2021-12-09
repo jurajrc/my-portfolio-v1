@@ -21,5 +21,4 @@ const ErrorMessage = ({ toggleError }) => {
     )
 }
 
-
 export default ErrorMessage
