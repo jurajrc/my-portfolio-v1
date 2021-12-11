@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 
-export const UseScroll = (percentage) => {
+export const UseScroll = (percentage=.5) => {
     const controls = useAnimation()
     const [element, view] = useInView({threshold: percentage})
     if (view) {
