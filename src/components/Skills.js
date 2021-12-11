@@ -1,12 +1,18 @@
 import React from 'react'
+import OneSkill from './OneSkill'
+import Package from './Package'
 // Style
 import styled from 'styled-components'
 // Anime
-import OneSkill from './OneSkill'
-import Package from './Package'
+import { motion } from 'framer-motion'
+import { UseScroll } from './useScroll'
+import { scrollReveal } from '../animations'
 
 
 const Skills = () => {
+
+    const [element, controls] = UseScroll(.2)
+
     return (
         <StyleSkills>
             <div className="nadpis">
@@ -22,7 +28,12 @@ const Skills = () => {
             <div className="nadpis">
                 <h3>React a moje obľúbené npm knižnice</h3>
             </div>
-            <Wrap>
+            <Wrap 
+                variants={scrollReveal}  
+                initial="hidden"
+                animate={controls}
+                ref={element}
+            >
                 <Package npm="Router" />
                 <Package npm="Redux" />
                 <Package npm="Styled component" />
@@ -72,7 +83,7 @@ const StyleSkills = styled.div`
     }
     
 `
-const Wrap = styled.div`
+const Wrap = styled(motion.div)`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
