@@ -169,9 +169,29 @@ export const scrollReveal = {
         opacity: 1,
         scale: 1,
         transition: {
-            duration: 0.75,
+            duration: 0.5,
+            ease: 'easeIn'
         }
     },
     
 }
 
+// butto scroll top
+
+export const hideRight = {
+    hidden: {
+        x: 80
+    },
+    show: {
+        x: 0,
+        transition: {
+            type: 'spring',
+        }
+    },
+    exit: {
+        x: 80,
+        transition: {
+            duration: .3
+        }
+    }
+}
