@@ -13,6 +13,7 @@ import data from '../components/data'
 const MyPortfolio = () => {
     // State
     const [allData, setAllData] = useState(data)
+    //console.table(allData);
     return (
         <motion.article 
             exit="exit"
