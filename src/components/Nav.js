@@ -15,10 +15,10 @@ const Nav = () => {
 
     // state resize
     function useWindowSize() {
-        const [size , setSize] = useState([window.innerHeight, window.innerWidth])
+        const [size , setSize] = useState([ window.innerWidth])
         useEffect(() => {
             const handleResize = () => {
-                setSize([window.innerHeight, window.innerWidth])
+                setSize([ window.innerWidth])
             }
             window.addEventListener("resize", handleResize)
             return () => {
@@ -27,7 +27,7 @@ const Nav = () => {
         })
         return size
     }
-    const [height, width] = useWindowSize()
+    const [width] = useWindowSize()
 
     useEffect(() => {
         if(width <= 800) {
@@ -36,8 +36,6 @@ const Nav = () => {
         if (width > 800) {
             dispatch({ type: 'OPEN' })
         }
-        
-        
     }, [width])
 
 
