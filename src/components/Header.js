@@ -86,7 +86,7 @@ const Burger = styled.div`
         z-index: 40;
     }
     @media (max-width: 500px) {
-        top: 1.3em;
+        top: 1em;
     }
     .l1 {
     transform: rotate(45deg) translate(26%, 250%);

@@ -16,6 +16,7 @@ function App() {
   const [showButtonTop, setShowButtonTop] = useState(false)
   const location = useLocation()
 
+  // show/hidden to button scroll to top
   useScrollPosition(({ currPos }) => {
     if(-currPos.y > 300) {
       setShowButtonTop(true)

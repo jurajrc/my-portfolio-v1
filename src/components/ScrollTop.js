@@ -7,7 +7,8 @@ const ScrollTop = () => {
     useEffect(() => {
         window.scroll({
             top: 0,
-            left: 0
+            left: 0,
+            behavior: 'auto'
         })
     }, [pathname])
     

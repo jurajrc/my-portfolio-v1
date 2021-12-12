@@ -40,17 +40,22 @@ const ScrollTopButton = () => {
 const TopButton = styled(motion.div)`
     position: fixed;
     right: 2em;
-    bottom: 3em;
+    bottom: 3.5em;
     width: 2em;
     height: 2em;
     border-radius: 50%;
     border: 2px solid #0080ff;
     //transition: 0.5s all ease;
     cursor: pointer;
+    @media (max-width: 600px) {
+            border: 1px solid #0080ff;
+            right: 0.5em;
+            bottom: 1.5em;
+        }
     img {
         width: 100%;
         height: 100%;
-        opacity: 0;
+        opacity: 0.5;
     }
 `
 
