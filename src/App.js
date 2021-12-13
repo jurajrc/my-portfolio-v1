@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
@@ -14,7 +14,14 @@ import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const [showButtonTop, setShowButtonTop] = useState(false)
+  const [messageConsole, setMessageConsole] = useState(true)
   const location = useLocation()
+
+  // message to console
+  useEffect(() => {
+    messageConsole && console.log("%cAhoj vitaj v console môjho web-portfólia, kontakt na mňa => https://jurajportfolio.6f.sk/#/contact a môžme začať spolupracovať :)", "color:#0080ff; border: 1px solid #0080ff;");
+    setMessageConsole(false)
+  }, [messageConsole])
 
   // show/hidden to button scroll to top
   useScrollPosition(({ currPos }) => {
