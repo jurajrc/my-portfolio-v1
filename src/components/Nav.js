@@ -36,7 +36,7 @@ const Nav = () => {
         if (width > 800) {
             dispatch({ type: 'OPEN' })
         }
-    }, [width])
+    }, [width, dispatch])
 
 
     const {pathname} = useLocation()
