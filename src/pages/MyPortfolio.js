@@ -12,7 +12,7 @@ import data from '../components/data'
 
 const MyPortfolio = () => {
     // State
-    const [allData, setAllData] = useState(data)
+    const [allData] = useState(data)
     //console.table(allData);
     return (
         <motion.article 
