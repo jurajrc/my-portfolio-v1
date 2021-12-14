@@ -7,6 +7,7 @@ import ScrollTop from '../components/ScrollTop'
 // Animation
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../animations'
+import SliderLicens from '../components/SliderLicens'
 
 const AboutMy = () => {
     return (
@@ -19,7 +20,7 @@ const AboutMy = () => {
             <Intro />
             <Skills />
             <FagSection />
-
+            <SliderLicens />
             <ScrollTop />
         </motion.article> 
     )
