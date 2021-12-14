@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 // Components
@@ -37,17 +37,14 @@ function App() {
       <GlogalStyle />
         <Header />
       <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname} >
-          <Route path="/" exact >
-            <AboutMy />
-          </Route>
-          <Route path="/portfolio">
-            <MyPortfolio />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
+        <Routes location={location} key={location.pathname} >
+          <Route path="/" element={<AboutMy />} />
+            
+          <Route path="/portfolio" element={<MyPortfolio />} />
+            
+          <Route path="/contact"element={<Contact />} />
+            
+        </Routes>
       </AnimatePresence>
 
       <AnimatePresence>
