@@ -38,13 +38,34 @@ export const titleAnim = {
 export const popup = {
     hidden: {
         opacity: 0,
-        scale: 0.75,
+        scale: 0.4,
     },
     show: {
         opacity: 1,
         scale: 1,
         transition: {
+            duration: 0.8,
+        }
+    },
+    exit: {
+        opacity: 0,
+        scale: 0.75,
+        transition: {
             duration: 0.7,
+        },
+    },
+}
+export const popup2 = {
+    hidden: {
+        opacity: 0,
+        scale: 0.4,
+    },
+    show: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: 'spring', 
+            bounce: 0.5
         }
     },
     exit: {
