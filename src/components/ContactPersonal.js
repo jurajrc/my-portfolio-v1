@@ -9,7 +9,9 @@ const ContactPersonal = () => {
     const svgMessages = useRef(null)
     const flap = useRef(null)
     const note = useRef(null)
+    //const phone = useRef(null)
     const phone = useRef(null)
+    const sound = useRef(null)
 
     const tl = gsap.timeline({
         defaults: {duration: 0.35, ease: "Power2.easeOut"}
@@ -26,7 +28,8 @@ const ContactPersonal = () => {
 
     // Anime svg Phone
     const PhoneMouseEnter = () => {
-      tl.fromTo(phone.current, {rotation: -5}, {rotation: 0, duration: 2, ease: "elastic.out(5, 0.2)"})
+      gsap.fromTo(phone.current, {rotation: -5}, {rotation: 0, duration: 2, ease: "elastic.out(5, 0.2)"})
+      gsap.fromTo(sound.current, {opacity: 1, scale: 0.8}, {opacity: 0, scale: 1.3, duration: 1})
     }
 
     return (
@@ -71,27 +74,42 @@ const ContactPersonal = () => {
             <PersonalOne
                 onMouseEnter={PhoneMouseEnter}
                  className="phone-container">
-                <svg 
-                    ref={phone}
-                    width="48" 
-                    height="48" 
-                    viewBox="0 0 48 48" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                <path 
-                    d="M17.407 14.8879C18.1189 14.176 18.5188 13.2104 18.5188 12.2037C18.5188 11.1969 18.1189 10.2314 17.407 9.51944L13.9993 6.11179C13.2874 5.39992 12.3219 5 11.3151 5C10.3083 5 9.34281 5.39992 8.63089 6.11179L8.63706 6.10561L6.89239 7.84981C-3.22369 17.9659 30.0339 51.2235 40.15 41.1074L41.8942 39.3632L41.888 39.3694C42.5999 38.6575 42.9998 37.6919 42.9998 36.6852C42.9998 35.6784 42.5999 34.7129 41.888 34.0009L38.4804 30.5933C37.7684 29.8814 36.8029 29.4815 35.7961 29.4815C34.7894 29.4815 33.8238 29.8814 33.1119 30.5933L31.7382 31.967C30.6334 33.0718 28.8759 33.1436 27.6679 32.1522C23.5017 28.7332 19.2666 24.4986 15.848 20.3323C14.8567 19.1244 14.9284 17.3669 16.0333 16.2621L17.407 14.8879V14.8879Z" 
-                    fill="#0080FF"/>
-                </svg>
-
+                    <svg 
+                        className='phone-svg'
+                        width="48" 
+                        height="48" 
+                        viewBox="0 0 48 48" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="Phone">
+                            <g id="sound" className='sound' ref={sound}>
+                                <path 
+                                    d="M24.5224 10.349C25.2866 9.58416 26.3781 9.75469 26.3781 9.75469C29.105 10.183 31.9544 11.5047 34.2252 13.7749C36.4955 16.0451 37.8176 18.8944 38.2453 21.6222C38.2453 21.6222 38.4152 22.7137 37.651 23.4778C36.8643 24.2645 35.5092 24.2983 34.6808 23.4699C34.1909 22.98 34.0865 22.2891 34.0865 22.2891C33.8339 20.9417 33.4062 18.9121 31.2471 16.753C29.0873 14.5939 27.0578 14.1662 25.7111 13.9136C25.7111 13.9136 25.0202 13.8092 24.5304 13.3193C23.7014 12.491 23.7357 11.1357 24.5224 10.349Z" 
+                                    fill="#0080FF"
+                                />
+                                <path 
+                                    d="M41.7133 23.4759C42.2627 19.8352 40.575 15.3424 36.6163 11.3836C32.6577 7.42498 28.165 5.73712 24.5242 6.28652C24.5242 6.28652 23.3714 6.47834 22.6184 5.72526C21.7709 4.87779 21.8191 3.53439 22.6124 2.74106C23.1228 2.23075 23.9518 2.12031 23.9518 2.12031C27.098 1.66677 33.4266 2.23794 39.5945 8.40545C45.7625 14.5729 46.3336 20.9022 45.8794 24.0484C45.8794 24.0484 45.7684 24.8781 45.2587 25.3878C44.4654 26.1805 43.1221 26.2294 42.2745 25.3818C41.5216 24.6288 41.7133 23.4759 41.7133 23.4759Z" 
+                                    fill="#0080FF"
+                                />
+                            </g>
+                            <path 
+                                ref={phone}
+                                className='phone'
+                                d="M29.2979 34.995C27.4969 36.8184 22.9096 33.0421 18.9464 29.089C14.9826 25.1351 11.1911 20.5548 12.9911 18.7321C15.5698 16.1214 17.8175 14.5091 13.2099 8.79577C8.60444 3.0796 5.56461 7.49259 3.06639 10.0218C0.182248 12.941 2.96501 23.7665 13.664 34.4383C24.3637 45.1081 35.1583 47.8214 38.0403 44.9036C40.5377 42.3745 44.9078 39.2871 39.1858 34.6995C33.4637 30.1142 31.8765 32.385 29.2979 34.995Z" 
+                                fill="#0080FF"
+                            />
+                        </g>
+                    </svg>
 
                 <div className="phone-text">
                     <a href="tel:+421918466552">+421 918 466 552</a>
                 </div>
             </PersonalOne>
+            
         </Personal>
     )
 }
+
 const Personal = styled.section`
     padding-top: 3em;
 
@@ -129,13 +147,21 @@ const PersonalOne = styled.div`
         color: white;
     }
 
-    .messages-svg {
+    .messages-svg, .phone-svg {
         overflow: visible;
     }
 
     .flap {
         transform-origin: 23px 0px;
-    
+        }
+
+    .phone {
+        transform-origin: center;
+    }
+    .sound {
+        opacity: 0;
+        transform-origin: left center;
+    }
 `
 
 export default ContactPersonal
