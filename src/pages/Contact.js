@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import FactBlock from '../components/FactBlock'
 import Heading from '../components/Heading'
 import ScrollTop from '../components/ScrollTop'
+import ContactPersonal from '../components/ContactPersonal'
 // Image
 import globus from '../image/global-digital-planet.svg'
 // Style
@@ -82,7 +83,7 @@ const Contact = () => {
                             id="name"
                             name="name" 
                             type="text"   
-                            placeholder="Meno Priezvisko" 
+                            placeholder="Vaše meno" 
                             value={formik.values.name}
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
@@ -123,7 +124,7 @@ const Contact = () => {
                         type="submit" value="Odoslať správu" className="submit"/>
                         
                     </form>
-
+                    <ContactPersonal />
                 </div>
             </Content>
             <ScrollTop />
@@ -134,7 +135,7 @@ const Contact = () => {
 const Content = styled(motion.div)`
     display: flex;
     justify-content: space-evenly;
-    padding: 4em 0;
+    padding: 1em 0;
     @media (max-width: 500px) {
             padding: 1em 0;
         }
@@ -168,6 +169,9 @@ const Content = styled(motion.div)`
         }
         @media (max-width: 500px) {
             padding-bottom: 1em;
+        }
+        h3 {
+            padding: 4em 0 1em 0;
         }
         form {
             width: 26em;
