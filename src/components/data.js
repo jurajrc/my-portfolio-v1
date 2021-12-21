@@ -32,7 +32,7 @@ function allgallery () {
             name: "Weather",
             id: uuidv4(),
             url: "gallery/web4",
-            http: "https://www.shmu.sk/sk/?page=1",
+            http: "https://weather.6f.sk/",
             image: weather
         },
         {
