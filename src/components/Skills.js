@@ -43,7 +43,7 @@ const Skills = () => {
         </StyleSkills>
     )
 }
-const StyleSkills = styled.div`
+const StyleSkills = styled.section`
 
     width: 100%;
     margin: 3em 0;

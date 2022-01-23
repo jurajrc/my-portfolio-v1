@@ -70,7 +70,7 @@ const SliderLicens = () => {
         </StyleCertificate>
     )
 }
-const StyleCertificate = styled(motion.aside)`
+const StyleCertificate = styled(motion.section)`
     padding: 2em 0 4em;
 `
 

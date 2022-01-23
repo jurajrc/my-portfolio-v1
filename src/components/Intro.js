@@ -46,7 +46,7 @@ const Intro = () => {
         </StyleIntro>
     )
 }
-const StyleIntro = styled.div`
+const StyleIntro = styled.section`
     display: flex;
     margin: 18% auto 0;
     width: 80%;
