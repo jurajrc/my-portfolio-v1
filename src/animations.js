@@ -45,6 +45,7 @@ export const popup = {
         scale: 1,
         transition: {
             duration: 0.8,
+            ease: "linear",
         }
     },
     exit: {
