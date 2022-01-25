@@ -6,7 +6,7 @@ import ignite from '../image/small/img-ignite-s.png'
 import weather from '../image/small/img-weacher-s.png'
 import tunes from '../image/small/img-tunes-s.png'
 import player from  '../image/small/img-player-s.png'
-import bart_web from '../image/small/img-bart-web-s.png'
+import space_web from '../image/small/img-space-s.png'
 import jurajrc from '../image/small/img-jurajrc-s.png'
 import stolar1 from '../image/small/img-stolarstvo-v1-s.png'
 
@@ -52,11 +52,11 @@ function allgallery () {
             github: "https://github.com/jurajrc/Player-react.git"
         },
         {
-            name: "bart-web",
+            name: "frontend",
             id: uuidv4(),
             url: "gallery/web1.1",
-            http: "http://jurajrc.6f.sk/",
-            image: bart_web
+            http: "https://juraj-web2.6f.sk/",
+            image: space_web
         },
         {
             name: "JurejRC v1",
