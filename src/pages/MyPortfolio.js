@@ -37,7 +37,7 @@ const MyPortfolio = () => {
         </motion.article>
     )
 }
-const StyleProjects = styled(motion.div)`
+const StyleProjects = styled(motion.section)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,11 +70,11 @@ const StyleOneProject = styled(motion.div)`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: 500ms all ease-in-out;
+        transition: 750ms all ease-in-out;
         filter: brightness(80%);
     }
     &:hover img {
-        transform: scale(1.03);
+        transform: scale(1.06) rotateZ(-2deg);
         filter: brightness(100%);
     }
     &:hover {
