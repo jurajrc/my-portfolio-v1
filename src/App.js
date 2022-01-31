@@ -12,9 +12,12 @@ import ScrollTopButton from './components/ScrollTopButton';
 // Animation
 import { AnimatePresence } from 'framer-motion'
 
+import data from './components/data'
+
 function App() {
   const [showButtonTop, setShowButtonTop] = useState(false)
   const [messageConsole, setMessageConsole] = useState(true)
+  const [allData, setAlldata] = useState(data)
   const location = useLocation()
 
   // message to console
@@ -40,7 +43,7 @@ function App() {
         <Routes location={location} key={location.pathname} >
           <Route path="/" element={<AboutMy />} />
             
-          <Route path="/portfolio" element={<MyPortfolio />} />
+          <Route path="/portfolio" element={<MyPortfolio allData={allData} />} />
             
           <Route path="/contact"element={<Contact />} />
             

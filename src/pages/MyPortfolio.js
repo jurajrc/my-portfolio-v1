@@ -7,13 +7,10 @@ import styled from 'styled-components'
 // animate
 import { motion } from 'framer-motion'
 import { pageAnimation, popup } from '../animations'
-// Data
-import data from '../components/data'
 
-const MyPortfolio = () => {
-    // State
-    const [allData] = useState(data)
-    //console.table(allData);
+
+const MyPortfolio = ({allData}) => {
+    
     return (
         <motion.article 
             exit="exit"
@@ -74,7 +71,7 @@ const StyleOneProject = styled(motion.div)`
         filter: brightness(80%);
     }
     &:hover img {
-        transform: scale(1.03);
+        transform: scale(1.04) rotateZ(-1deg);
         filter: brightness(100%);
     }
     &:hover {
