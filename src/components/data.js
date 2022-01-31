@@ -15,7 +15,7 @@ function allgallery () {
         {
             name: "Stolarstvo JOS v2",
             id: uuidv4(),
-            url: "gallery/web6",
+            url: "/portfolio/web6",
             http: "http://stolarstvojos.6f.sk/#/",
             image: stolar2,
             github: "https://github.com/jurajrc/stolarstvoJOS.git"
