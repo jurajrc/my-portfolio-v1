@@ -1,34 +1,53 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 // Components
 import FactBlock from '../components/FactBlock'
 import ScrollTop from '../components/ScrollTop'
+import FilterButtons from '../components/FilterButtons'
 // Style
 import styled from 'styled-components'
 // animate
-import { motion } from 'framer-motion'
-import { pageAnimation, popup } from '../animations'
+import { motion, AnimatePresence } from 'framer-motion'
+import { pageAnimationShou } from '../animations'
 
 
 const MyPortfolio = ({allData}) => {
+    const [filtered, setFiltered] = useState([])
+    const [activeButton, setActiveButton] = useState("all")
     
     return (
         <motion.article 
             exit="exit"
-            variants={pageAnimation} 
+            variants={pageAnimationShou} 
             initial="hidden" 
             animate="show"  
         > 
             <FactBlock icon="1 rok skúsenosti" heading="Portfólio" />
-            <StyleProjects>
+
+            <FilterButtons 
+                allData={allData} 
+                activeButton={activeButton} 
+                setActiveButton={setActiveButton} 
+                setFiltered={setFiltered}
+            />
+
+            <StyleProjects  >
+                <AnimatePresence >
                 {
-                    allData.map((item, index) => (
-                        <StyleOneProject  key={index} variants={popup} >
-                            <a href={item.http} target="_blank" rel="noreferrer">
-                                <img src={item.image} alt={item.id} />
-                            </a>
+                    filtered.map((item) => (
+                        
+                        <StyleOneProject  key={item.id} 
+                            initial={{opacity: 0, scale: 0.5}}
+                            animate={{opacity: 1, scale: 1}}
+                            exit={{opacity: 0, scale: 0.5}}
+                        >
+                            <Link to={item.url} >
+                                <motion.img  src={item.image} alt={item.id}  />
+                            </Link>
                         </StyleOneProject>
                     ))
                 }
+                </AnimatePresence>
             </StyleProjects>
             <ScrollTop />
         </motion.article>
@@ -37,9 +56,9 @@ const MyPortfolio = ({allData}) => {
 const StyleProjects = styled(motion.section)`
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    margin: 4em 0;
+    align-items: center;
+    margin: 2em 0;
     @media (max-width: 500px) {
         margin: 1em 0;
     }
@@ -71,7 +90,7 @@ const StyleOneProject = styled(motion.div)`
         filter: brightness(80%);
     }
     &:hover img {
-        transform: scale(1.06) rotateZ(-2deg);
+        transform: scale(1.04) rotateZ(-1.5deg);
         filter: brightness(100%);
     }
     &:hover {
