@@ -16,7 +16,7 @@ const StylePackage = styled.div`
     flex-basis: 15rem;
     margin: 4rem 1rem;
     @media (max-width: 800px) {
-        flex-basis: 10rem;
+        flex-basis: 6rem;
         margin: 2rem 0rem;
     }
     

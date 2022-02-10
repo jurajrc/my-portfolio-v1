@@ -47,5 +47,20 @@ const GlogalStyle = createGlobalStyle`
         border-radius: 3.125em;
         width: 9.375em;
     }
+    .button-pro {
+        padding: 0.5em 0.5em;
+        background: rgb(51, 51, 51);
+        color: #f8f8f8;
+        text-align: center;
+        border: 2px solid rgb(0, 128, 255);
+        border-radius: 3.125em;
+        width: 7em;
+        @media (max-width: 700px) {
+            font-size: 85%;
+        }
+        @media (max-width: 500px) {
+            font-size: 70%;
+        }
+    }
 `
 export default GlogalStyle

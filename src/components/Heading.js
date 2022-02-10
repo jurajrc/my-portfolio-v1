@@ -43,6 +43,7 @@ const StyleHeading = styled(motion.div)`
             width: 10%;
             border-bottom: 2px solid #0080ff;
             animation: move ${randomIntFromInterval(7, 8)}s infinite ease-in-out;
+            
         }
 
         @keyframes move {

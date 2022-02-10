@@ -22,7 +22,7 @@ function App() {
   const [messageConsole, setMessageConsole] = useState(true)
   const [allData] = useState(data)
   const location = useLocation()
-  //console.log(location);
+  //console.log(location.pathname);
 
   // message to console
   useEffect(() => {
@@ -50,7 +50,7 @@ function App() {
             
           <Route path="/portfolio" element={<MyPortfolio allData={allData}/>} />
 
-          {/* <Route path="/portfolio/:id" element={<OneProject allData={allData}/>} /> */}
+          <Route path="/portfolio/:id" element={<OneProject allData={allData} path={location.pathname} />} />
             
           <Route path="/contact"element={<Contact />} />
             
