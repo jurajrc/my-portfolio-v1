@@ -32,25 +32,29 @@ const OneProject = ({allData, path}) => {
                 <>
                     <FactBlock heading={oneData[0].name} icon="super skúsenosť" />
 
-                    <ButtonsStyle>
-                        <ButonStyle 
-                        variants={moveTextRight2}
-                        whileHover={{
-                            scale: 1.03,
-                            textShadow: "0px 0px 4px #f8f8f8",
-                            boxShadow: "0px 0px 10px rgb(0, 125, 255)"
-                        }}
-                        className="button-pro">
-                        <Link className='link-button' to="/portfolio" >Späť</Link>
-                        </ButonStyle>
+                    <div>
+                        <ButtonsStyle>
+                            <ButonStyle 
+                            variants={moveTextRight2}
+                            whileHover={{
+                                scale: 1.03,
+                                textShadow: "0px 0px 4px #f8f8f8",
+                                boxShadow: "0px 0px 10px rgb(0, 125, 255)"
+                            }}
+                            className="button-pro">
+                            <Link className='link-button' to="/portfolio" >Späť</Link>
+                            </ButonStyle>
 
-                        {oneData[0].github !== "" ? 
-                            <ButtonOneProject href={oneData[0].github} text="GitHub" />
-                        : <></> }
+                            {oneData[0].github !== "" ? 
+                                <ButtonOneProject href={oneData[0].github} text="GitHub" />
+                            : <></> }
 
-                        <ButtonOneProject href={oneData[0].http} text="Demo" />
+                            {oneData[0].http !== "" ?
+                                <ButtonOneProject href={oneData[0].http} text="Demo" />
+                            : <></>}
 
-                    </ButtonsStyle>
+                        </ButtonsStyle>
+                    </div>
 
                     {oneData[0].description !== "" ? (
                         <>
@@ -87,6 +91,15 @@ const OneProject = ({allData, path}) => {
 
                     <ImageStyle>
                         <img src={oneData[0].image} alt={oneData[0].name} />
+                        {oneData[0].images.length !== 0 ? (
+                            <div className="next-images">
+
+                                {oneData[0].images.map((item, index) => (
+                                    <img src={item} alt="screen" key={index} />
+                                ))}
+
+                            </div>
+                        ) : <></>}
                     </ImageStyle>
                 </>
             )
@@ -102,7 +115,8 @@ const ButtonsStyle = styled.div`
     margin: 1em 0;
 `
 const ButonStyle = styled(motion.div)`
-    margin: 0 0.5em;
+    margin: 0 0.5em
+    
 `
 const DesripStyle = styled.div`
     padding: 2em;
@@ -143,9 +157,20 @@ const ImageStyle = styled.div`
     margin: 2em 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .next-images {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     img {
         width: 50%;
         height: auto;
+        margin: 0.6em 0;
         
         @media (max-width: 500px) {
             width: 100%;
