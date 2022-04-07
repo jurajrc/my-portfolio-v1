@@ -32,6 +32,9 @@ const Intro = () => {
                 <Hide>
                     <motion.p variants={fade} >Vitajte na webe môjho osobného portfólia. Volám sa Juraj Kubičár a som junior frontend vývojár. Dávam si za úlohu vytvárať kreatívne weby a aplikácie s peknými detailami. Dizajn obohacujem o vlastné návrhy, ktoré sú precízne vyrobené na základe vášho želania.</motion.p>
                 </Hide>
+
+                
+
                 <motion.div 
                     variants={moveTextRight2}
                     whileHover={{

@@ -22,7 +22,7 @@ const Skills = () => {
             <OneSkill technologi="HTML" strong="80" />
             <OneSkill technologi="CSS / SASS" strong="80" />
             <OneSkill technologi="JavaScript ES6" strong="40" />
-            <OneSkill technologi="ReactJS" strong="30" />
+            <OneSkill technologi="ReactJS | TS" strong="40" />
             <OneSkill technologi="PHP" strong="25" />
             <OneSkill technologi="Figma" strong="25" />
             
