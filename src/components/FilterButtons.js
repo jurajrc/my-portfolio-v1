@@ -26,10 +26,17 @@ const FilterButtons = ({
             </StyleButton>
 
             <StyleButton 
-                className={activeButton === 'React' ? "active" : ""}
-                onClick={() => setActiveButton("React")}
+                className={activeButton === 'React-js' ? "active" : ""}
+                onClick={() => setActiveButton("React-js")}
             >
-              React
+              React-js
+            </StyleButton>
+
+            <StyleButton 
+                className={activeButton === 'React-ts' ? "active" : ""}
+                onClick={() => setActiveButton("React-ts")}
+            >
+              React-ts
             </StyleButton>
 
             <StyleButton
