@@ -9,6 +9,7 @@ import styled from 'styled-components'
 // animate
 import { motion, AnimatePresence } from 'framer-motion'
 import { pageAnimationShou } from '../animations'
+import Button3d from '../components/Button3d'
 
 
 const MyPortfolio = ({allData}) => {
@@ -22,7 +23,7 @@ const MyPortfolio = ({allData}) => {
             initial="hidden" 
             animate="show"  
         > 
-            <FactBlock icon="1 rok skúsenosti" heading="Portfólio" />
+            <FactBlock icon="1,5 roka skúsenosti" heading="Portfólio" />
 
             <FilterButtons 
                 allData={allData} 
@@ -49,6 +50,9 @@ const MyPortfolio = ({allData}) => {
                 }
                 </AnimatePresence>
             </StyleProjects>
+            <StyleButton3d className='button-3d'>
+                <Button3d />
+            </StyleButton3d>
             <ScrollTop />
         </motion.article>
     )
@@ -96,6 +100,12 @@ const StyleOneProject = styled(motion.div)`
     &:hover {
         box-shadow: 0 0 10px #8e8d8f;
     }
+`
+const StyleButton3d = styled.div`
+    margin: 5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export default MyPortfolio
