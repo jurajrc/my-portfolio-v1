@@ -11,6 +11,8 @@ import player from  '../image/small/img-player-s.png'
 import space_web from '../image/small/img-space-s.png'
 import jurajrc from '../image/small/img-jurajrc-s.png'
 import stolar1 from '../image/small/img-stolarstvo-v1-s.png'
+import jumping from '../image/small/jumpingV1.jpg'
+import color_back from '../image/small/Color-background.jpg'
 
 // next image
 import netflix2 from '../image/next-images/netflix/clone-netflix-2.jpg'
@@ -165,6 +167,42 @@ function allgallery () {
                 "https://s2.svgbox.net/files.svg?ic=php3"
             ],
             use_tech: 'php'
+        },
+        {
+            name: "Game Jumping",
+            id: uuidv4(),
+            url: "/portfolio/web01",
+            http: "http://jurajrc.6f.sk/jump.html",
+            image: jumping,
+            images: [],
+            github: "https://github.com/jurajrc/Game-jump",
+            description: "Hra ktorú som vyrobil na začiatku učenia fromtedu",
+            package: [],
+            technologies: [
+                "https://s2.svgbox.net/files.svg?ic=vscode&color=474724",
+                "https://s2.svgbox.net/files.svg?ic=html&color=000",
+                "https://s2.svgbox.net/files.svg?ic=scss&color=000",
+                "https://s2.svgbox.net/files.svg?ic=js"
+            ],
+            use_tech: ''
+        },
+        {
+            name: "Color Background",
+            id: uuidv4(),
+            url: "/portfolio/web02",
+            http: "http://jurajrc.6f.sk/color-game.html",
+            image: color_back,
+            images: [],
+            github: "https://github.com/jurajrc/learn-color",
+            description: "Jednoduchá stránka ktorá robí veľké zmeny :), zadaj farbu po anglicky.",
+            package: [],
+            technologies: [
+                "https://s2.svgbox.net/files.svg?ic=vscode&color=474724",
+                "https://s2.svgbox.net/files.svg?ic=html&color=000",
+                "https://s2.svgbox.net/files.svg?ic=scss&color=000",
+                "https://s2.svgbox.net/files.svg?ic=js"
+            ],
+            use_tech: ''
         },
         
     ]
