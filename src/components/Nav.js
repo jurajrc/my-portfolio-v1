@@ -41,6 +41,7 @@ const Nav = () => {
 
     const {pathname} = useLocation()
 
+    // handle click to Link close nav if view < 800
     const closeNav = () => {
         if(width <= 800) {
             dispatch({ type: 'toggleOpenNav' })

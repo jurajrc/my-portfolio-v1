@@ -1,6 +1,6 @@
 import React from 'react'
 import fail from '../image/fail-200px.svg'
-// Style
+// Style 
 import { StyleSend, CenterSend } from '../styles'
 // Animation
 import { motion } from 'framer-motion'
