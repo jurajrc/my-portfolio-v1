@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
 //image
+import rcweb from '../image/small/rc-lomnica-1.jpg'
 import weather_ts from '../image/small/weather-ts.jpg'
 import netflix from '../image/small/clone-netflix.jpg'
 import stolar2 from '../image/small/img-stolarstvo-v2-s.png'
@@ -21,11 +22,27 @@ import netflix4 from '../image/next-images/netflix/Frame-1.png'
 
 import weather2_2 from '../image/next-images/weather2-ts/weather-ts-2.jpg'
 import weather2_3 from '../image/next-images/weather2-ts/weather-mobile3.png'
+
+import rcweb2 from '../image/small/rc-lomnica-2.jpg'
+import rcweb3 from '../image/small/rc-lomnica-3.png'
 // images
 
 
 function allgallery () {
     return [
+        {
+            name: "Web pre RC klub - TypeScript",
+            id: uuidv4(),
+            url: "/portfolio/web9",
+            http: "https://letlomnica.sk/",
+            image: rcweb,
+            images: [rcweb2, rcweb3],
+            github: "",
+            description: "Web to aplikácia respnzívny na všetky zariadenia,  uživateľ môže pozrieť aktuálne počasie v a predpoveď na dve dni. Vyvinuté na zvíšenie mojich skúseností v React a TypeScript, Framer Motion a zhromaždovanim a manipiláciou s údajmi API o počasí pomocou Axios",
+            package: ["React", "Styled component", "Framer motion", "Axios", "api-weather" ],
+            technologies: [],
+            use_tech: 'React-ts'
+        },
         {
             name: "Netflix clone",
             id: uuidv4(),
@@ -194,7 +211,7 @@ function allgallery () {
             image: color_back,
             images: [],
             github: "https://github.com/jurajrc/learn-color",
-            description: "Jednoduchá stránka ktorá robí veľké zmeny :), zadaj farbu po anglicky.",
+            description: "Jedna z prvích stránok na mojich začiatkoch keď som sa zoznamoval s JavaScriptom. Jednoduchá stránka ktorá robí veľké zmeny :), zadaj farbu po anglicky.",
             package: [],
             technologies: [
                 "https://s2.svgbox.net/files.svg?ic=vscode&color=474724",
